@@ -78,6 +78,10 @@ const processBatches = async () => {
   processing = false;
 };
 
+app.get('/', (req, res) => {
+  res.send('Ingestion API is running');
+});
+
 // POST /ingest - submit ingestion request
 app.post('/ingest', (req, res) => {
   const { ids, priority } = req.body;
